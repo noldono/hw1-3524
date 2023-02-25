@@ -19,7 +19,13 @@ int main(int argc, char *argv[]) {
                 std::cout << result << std::endl;
                 return 0;
             }
-            s.push(std::stod(line));
+            try {
+                double test = std::stod(line);
+                s.push(test);
+            } catch (...) {
+                std::cerr << "Invalid line in text file" << std::endl;
+                return -1;
+            }
         }
 
     } else if (argc == 2) {
@@ -38,7 +44,13 @@ int main(int argc, char *argv[]) {
                 std::cout << result << std::endl;
                 return 0;
             }
-            s.push(std::stod(line));
+            try {
+                double test = std::stod(line);
+                s.push(test);
+            } catch (...) {
+                std::cerr << "Invalid line in text file" << std::endl;
+                return -1;
+            }
         }
 
     } else {
